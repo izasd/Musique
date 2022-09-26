@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="Estilos/EstiloCadastroDenuncia.css">
+            <title> Enviar Denúncia | Musique </title>
+        </head>
+        <body>
+            <div class="adddenuncia">
+                <div class="cadastrodenuncia">
+                    <div class="enviardenuncia">
+                        <div class="card">
+                            <img src="Img/musique_logo.png"></br>
+                            <h1> Envie uma Denúncia </h1>
+                            <h3> Você está denunciando: UsuárioExemplo01 </h3><br>
+                            <h3>"Comentário ofensivo/preconceituoso"</h3>
+
+                            <div class="textfield">
+                            </br></br><label for="motivo"> Qual o motivo da denúncia? </label> </br>
+                            <form id="formdenuncia">
+                                <div>
+                                    <input type="radio" id="motivo1" name="motivo" required>
+                                    <label for="motivo1"> Xenofobia </label></br>
+                                </div>
+        
+                                <div>
+                                    <input type="radio" id="motivo2" name="motivo">
+                                    <label for="motivo2"> Racismo </label></br>
+                                </div>
+        
+                                <div>
+                                    <input type="radio" id="motivo3" name="motivo">
+                                    <label for="motivo3"> Homofobia </label>
+                                </div>
+
+                                <div>
+                                    <input type="radio" id="motivo5" name="motivo">
+                                    <label for="motivo5"> Outros </label>
+                                </div>
+                            </div>
+
+                            <div class="textfield">   
+                                </br><label for="textodenuncia"> Se quiser nos diga o motivo da denúncia você mesmo: </label>
+                                <textarea rows="25" name="textodenuncia" id="textodenuncia" class="textfield" placeholder="Digite aqui o motivo da sua denúncia."></textarea>
+                            </div>
+                                
+                                <button class="btn-adddenuncia"> Enviar Denúncia </button>
+                            </form>
+                                
+                                
+                        </div>
+                    </div>
+                </div>
+                </div> 
+        </body>
+</html>

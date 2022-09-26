@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="Estilos/EstiloCadastroPagamento.css">
+            <title> Pagamento | Musique </title>
+        </head>
+        <body onload="cartao()">
+            <div class="addpagamento">
+                <div class="cadastropagamento">
+                    <div class="card">
+                        <img src="Img/musique_logo.png"></br>
+                        <h1> Realizar Pagamento </h1>
+                            <h3> Valor: R$ 000,00 </h3>
+                                <br>
+                                    <label for="metodo"> Selecione o método de pagamento: </label>
+                                    <br>
+                                        <div>
+                                            <input type="radio" id="metodo1" name="metodo" checked onclick="cartao()">
+                                            <label for="metodo1"> Cartão </label></br>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="metodo2" name="metodo" onclick="boleto()">
+                                            <label for="metodo2"> Boleto </label></br>
+                                        </div>
+                                        <div>
+                                            <input type="radio" id="metodo3" name="metodo" onclick="pix()">
+                                            <label for="metodo3"> Pix </label></br>
+                                        </div>
+                                <br>
+                                <div id="pagcartao">
+                                    <form id="formcartao">
+                                    <div class="textfield">
+                                        <label for="nome"> Nome no cartão: </label>
+                                        <input type="text" name="nome" id="nome" placeholder="Nome" required>
+                                    </div>
+                                    <div class="textfield">
+                                        <label for="numcartao"> Número do Cartão: </label>
+                                        <input type="number" name="numcartao" id="numcartao" placeholder="0000 0000 0000 0000" required min="0">
+                                    </div>
+                                    <div class="textfield">
+                                        <label for="vencimento"> Vencimento: </label>
+                                        <input type="string" name="vencimento" id="vencimento" placeholder="MM/AA" required>
+                                    </div>
+                                    <div class="textfield">
+                                        <label for="codigo"> CVV/CVC: </label>
+                                        <input type="number" name="codigo" id="codigo" placeholder="000" required min="000">
+                                    </div>
+                                    <input type="button" class="btn" value="Finalizar Transação"> 
+                                    </form>
+                                </div>
+
+                                <div id="pagpix">
+                                    <center>
+                                        <p> Escaneie o QR code ou copie e cole o código no </p>
+                                        <p> aplicativo do seu banco de preferência para efetuar o pagamento. </p><br>
+                                        <p> Você receberá a confirmação em seu e-mail logo em seguida. </p><br>
+                                        <img src="Img/qrcode.png" class="qrcode"><br>
+                                        <input type="button" class="btn" value="Copiar Código"> 
+                                    </center>
+                                </div>
+
+                                <div id="pagboleto">
+                                    <center>
+                                        <p> Utilize o código de barras a seguir ou copie e cole o código no </p>
+                                        <p> aplicativo de seu banco de preferência para efetuar o pagamento. </p><br>
+                                        <p> Você receberá a confirmação em seu e-mail em até 3 dias úteis após o pagamento. </p><br>
+                                        <img src="Img/codigo_boleto.png" class="boleto">
+                                        <p> 26091.12525 10795.882405 88100.000004 1 90730000013500 </p><br>
+                                        <input type="button" class="btn" value="Baixar Boleto"> 
+                                    </center>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+        <script src="pagamento.js"></script>
+        </body>
+    </html>

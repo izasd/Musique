@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="Estilos/EstiloCadastroOuvinte.css">
+
+        <title> Cadastre-se | Musique </title>
+    </head>
+
+    <body>
+            <form class="menu">
+
+                <div class="card">
+                    <img src="Img/musique_logo.png"></br>
+                    <h1> Cadastre-se</h1>
+                    
+                    <div class="textfield">
+                        <br><label for="usuario"> Nome de Usuário </label>
+                        <input type="text" name="usuario" id="usuario" placeholder="Insira um nome de perfil." required>
+                    </div>
+
+                    <div class="textfield">
+                        <br><label for="datanascimento"> Data de Nascimento </label>
+                        <input type="date" name="datanascimento" id="datanascimento" required>
+                    </div>
+
+                    <div class="textfield">
+                        <br><label for="email"> E-mail </label>
+                        <input type="text" name="email" id="email" placeholder="Insira seu e-mail." autocomplete="off" required>
+                    </div>
+
+                    <div class="textfield">
+                        <br><label for="senha"> Senha </label>
+                        <input type="password" name="senha" id="senha" placeholder="Crie uma senha." required>
+                    </div>
+
+                    <div class="textfield">
+                    </br></br><label for="genero"> Qual é o seu gênero? </label> </br>
+                        
+                        <div>
+                            <input type="radio" id="genero1" name="genero">
+                            <label for="genero1">Feminino</label></br>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="genero2" name="genero">
+                            <label for="genero2">Masculino</label></br>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="genero3" name="genero">
+                            <label for="genero3">Não-binário</label>
+                        </div>
+                    </div>
+                    
+                <button class="btn-card"> Cadastrar-se </button>
+                </br><p> Já possui uma conta? <a href="LoginOuvinte.html">Faça Login</a>.</p>
+
+            </form>
+        </div>
+    </body>
+</html>

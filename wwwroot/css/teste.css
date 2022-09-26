@@ -1,0 +1,22 @@
+body{
+    background-image: linear-gradient(to right, black, #380256, #6c0078, #399fa0);
+    
+}
+
+nav{
+    color: white !important;
+    background-color: #56ecee;
+}
+
+.logo-header{
+    height: 30px !important;
+}
+
+.botao{
+    background-color: #380256;
+    border: none;
+}
+
+.botao:hover{
+    background-color: #399fa0 !important;
+}
