@@ -1,0 +1,12 @@
+@model Musica
+
+<h2>Deletion <i>@Model.Nome</i></h2>
+<h3>Do you really want to Delete this artist? This action can't be undone.
+</h3>
+<hr>
+
+<form method="POST" asp-action="ProcessDelete">
+    <a asp-action="Index" asp-controller="Musica" class="btn btn-success">No</a>
+    <input type="hidden" asp-for="@Model.IdMusica">
+    <button type="submit" class="btn btn-danger">Yes</button>
+</form>

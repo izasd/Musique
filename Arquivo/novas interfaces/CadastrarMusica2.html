@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="teste.css">
+    <title>Enviar Sugestão | Musique</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg mb-5 text-center">
+        <div class="container">
+            <div class="col-4 d-flex">
+                <a class="navbar-brand" href="#"><img src="img/musique_logo.png" alt="" class="logo-header"></a>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Gêneros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Artistas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Álbuns</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <form class="d-flex justify-content-center">
+                    <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                    <button class="btn botao" type="submit">Pesquisar</button>
+                </form>
+            </div>
+            <div class="col-4 d-flex justify-content-end align-items-center">
+
+                <div>
+                    <div class="nav-item dropdown text-end"></div>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        @Usuário
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Meu Perfil</a></li>
+                        <li><a class="dropdown-item" href="#">Avaliações</a></li>
+                        <li><a class="dropdown-item" href="#">Notificações</a></li>
+                        <li><a class="dropdown-item" href="#">Configurações</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="col-6 col-xl-4 offset-3 offset-xl-4 text-center">
+            <form>
+                <h1>Cadastro - Música</h1>
+                <hr class="mb-4">
+
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="Nome">
+                    <label for="floatingInput">Nome</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="Artista Associado">
+                    <label for="floatingInput">Artista</label>
+                </div>
+
+                <div class="mb-3">
+                    <select class="form-select" id="genero">
+                        <option selected>Gênero</option>
+                        <option value="Pop">Pop</option>
+                        <option value="Rock">Rock</option>
+                        <option value="Jazz">Jazz</option>
+                        <option value="MPB">MPB</option>
+                    </select>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="Duração">
+                    <label for="floatingInput">Duração</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="letra" class="form-control" id="floatingInput" placeholder="Letra">
+                    <label for="floatingInput">Letra</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="date" class="form-control" id="floatingInput" placeholder="Data de Lançamento">
+                    <label for="floatingInput">Data de Lançamento</label>
+                </div>
+                <button class="btn botao my-3">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="py-3 my-4 bg-dark">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Sobre</a></li>
+        </ul>
+        <p class="text-center text-muted">© 2022 Company, Inc</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+</body>
+</html>

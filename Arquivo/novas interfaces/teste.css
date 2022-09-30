@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300&family=Prompt:wght@400;500&display=swap');
+
+* {
+    font-family: "Poppins";
+    color: white;
+}
+
+label {
+    color: black !important;
+}
+
+h1{
+    font-family: "Open Sans";
+}
+
+body {
+    background-image: linear-gradient(to right, black, #380256, #6c0078, #399fa0);
+}
+
+option{
+    color: black;
+}
+
+nav {
+    color: white !important;
+    background-color: #380256;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: #56ECEE !important;
+    transition: 0.5s;
+}
+
+.logo-header {
+    height: 30px !important;
+}
+
+.botao {
+    color: #56ECEE;
+    background-color: #94009c;
+    border: none;
+}
+
+.botao:hover {
+    background-color: #399fa0 !important;
+    color: white !important;
+}
