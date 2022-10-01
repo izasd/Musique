@@ -21,13 +21,13 @@ public class DataContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder mb)
     {
-        mb.Entity<Avaliacao>().HasKey(ip => new { ip.IdOuvinte });
-        mb.Entity<Denuncia>().HasKey(ip => new { ip.IdAvaliacao });
-        mb.Entity<Denuncia>().HasKey(ip => new { ip.IdOuvinte });
-        mb.Entity<Gravacao>().HasKey(ip => new { ip.IdArtista });
-        mb.Entity<Gravacao>().HasKey(ip => new { ip.IdGenero });
-        mb.Entity<Gravacao>().HasKey(ip => new { ip.IdMusica });
-        mb.Entity<Gravacao>().HasKey(ip => new { ip.IdAlbum });
+        // mb.Entity<Avaliacao>().HasKey(ip => new { ip.IdOuvinte });
+        // mb.Entity<Denuncia>().HasKey(ip => new { ip.IdAvaliacao });
+        // mb.Entity<Denuncia>().HasKey(ip => new { ip.IdOuvinte });
+        // mb.Entity<Gravacao>().HasKey(ip => new { ip.IdArtista });
+        // mb.Entity<Gravacao>().HasKey(ip => new { ip.IdGenero });
+        // mb.Entity<Gravacao>().HasKey(ip => new { ip.IdMusica });
+        // mb.Entity<Gravacao>().HasKey(ip => new { ip.IdAlbum });
         mb.Entity<Seguidores>().HasKey(ip => new { ip.IdSeguido });
     }
     public DataContext(DbContextOptions<DataContext> options) : base(options){}

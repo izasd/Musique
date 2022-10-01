@@ -11,7 +11,7 @@ using Musique.Data;
 namespace Musique.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220924135153_v1")]
+    [Migration("20221001114959_v1")]
     partial class v1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,39 +55,41 @@ namespace Musique.Migrations
 
             modelBuilder.Entity("Musique.Models.Avaliacao", b =>
                 {
-                    b.Property<int>("IdOuvinte")
+                    b.Property<int>("IdAvaliacao")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Classificacao")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Comentario")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Estado")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("GravacaoIdAlbum")
+                    b.Property<int?>("GravacaoIdGravacao")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("IdAvaliacao")
+                    b.Property<int>("IdOuvinte")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("IdOuvinte");
+                    b.HasKey("IdAvaliacao");
 
-                    b.HasIndex("GravacaoIdAlbum");
+                    b.HasIndex("GravacaoIdGravacao");
+
+                    b.HasIndex("IdOuvinte");
 
                     b.ToTable("Avaliacoes");
                 });
 
             modelBuilder.Entity("Musique.Models.Denuncia", b =>
                 {
-                    b.Property<int>("IdOuvinte")
+                    b.Property<int>("IdDenuncia")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("DenuncianteIdUsuario")
+                    b.Property<int?>("DenuncianteIdUsuario")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Estado")
@@ -96,7 +98,7 @@ namespace Musique.Migrations
                     b.Property<int>("IdAvaliacao")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("IdDenuncia")
+                    b.Property<int>("IdOuvinte")
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("ModeradorIdUsuario")
@@ -107,10 +109,9 @@ namespace Musique.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("TextoMotivo")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("IdOuvinte");
+                    b.HasKey("IdDenuncia");
 
                     b.HasIndex("DenuncianteIdUsuario");
 
@@ -139,7 +140,8 @@ namespace Musique.Migrations
 
             modelBuilder.Entity("Musique.Models.Gravacao", b =>
                 {
-                    b.Property<int>("IdAlbum")
+                    b.Property<int>("IdGravacao")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("DataLancamento")
@@ -148,19 +150,21 @@ namespace Musique.Migrations
                     b.Property<double>("Duracao")
                         .HasColumnType("REAL");
 
+                    b.Property<int>("IdAlbum")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("IdArtista")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("IdGenero")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("IdGravacao")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("IdMusica")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("IdAlbum");
+                    b.HasKey("IdGravacao");
+
+                    b.HasIndex("IdAlbum");
 
                     b.HasIndex("IdArtista");
 
@@ -190,6 +194,20 @@ namespace Musique.Migrations
                     b.HasKey("IdMusica");
 
                     b.ToTable("Musicas");
+                });
+
+            modelBuilder.Entity("Musique.Models.Seguidores", b =>
+                {
+                    b.Property<int>("IdSeguido")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("IdSeguidor")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("IdSeguido");
+
+                    b.ToTable("TblSeguidores");
                 });
 
             modelBuilder.Entity("Musique.Models.Sugestao", b =>
@@ -263,7 +281,6 @@ namespace Musique.Migrations
                     b.HasBaseType("Musique.Models.Usuario");
 
                     b.Property<string>("Biografia")
-                        .IsRequired()
                         .HasMaxLength(300)
                         .HasColumnType("TEXT");
 
@@ -320,7 +337,7 @@ namespace Musique.Migrations
                 {
                     b.HasOne("Musique.Models.Gravacao", null)
                         .WithMany("Avaliacoes")
-                        .HasForeignKey("GravacaoIdAlbum");
+                        .HasForeignKey("GravacaoIdGravacao");
 
                     b.HasOne("Musique.Models.Ouvinte", "Ouvinte")
                         .WithMany("Avaliacoes")
@@ -335,9 +352,7 @@ namespace Musique.Migrations
                 {
                     b.HasOne("Musique.Models.Ouvinte", "Denunciante")
                         .WithMany("Denuncias")
-                        .HasForeignKey("DenuncianteIdUsuario")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DenuncianteIdUsuario");
 
                     b.HasOne("Musique.Models.Avaliacao", "Avaliacao")
                         .WithMany("Denuncias")

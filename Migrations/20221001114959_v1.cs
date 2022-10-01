@@ -51,6 +51,19 @@ namespace Musique.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "TblSeguidores",
+                columns: table => new
+                {
+                    IdSeguido = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    IdSeguidor = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TblSeguidores", x => x.IdSeguido);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Usuarios",
                 columns: table => new
                 {
@@ -101,17 +114,18 @@ namespace Musique.Migrations
                 name: "Gravacoes",
                 columns: table => new
                 {
-                    IdAlbum = table.Column<int>(type: "INTEGER", nullable: false),
-                    IdGravacao = table.Column<int>(type: "INTEGER", nullable: false),
+                    IdGravacao = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     DataLancamento = table.Column<DateTime>(type: "TEXT", nullable: false),
                     Duracao = table.Column<double>(type: "REAL", nullable: false),
                     IdArtista = table.Column<int>(type: "INTEGER", nullable: false),
                     IdGenero = table.Column<int>(type: "INTEGER", nullable: false),
-                    IdMusica = table.Column<int>(type: "INTEGER", nullable: false)
+                    IdMusica = table.Column<int>(type: "INTEGER", nullable: false),
+                    IdAlbum = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Gravacoes", x => x.IdAlbum);
+                    table.PrimaryKey("PK_Gravacoes", x => x.IdGravacao);
                     table.ForeignKey(
                         name: "FK_Gravacoes_Albuns_IdAlbum",
                         column: x => x.IdAlbum,
@@ -164,21 +178,22 @@ namespace Musique.Migrations
                 name: "Avaliacoes",
                 columns: table => new
                 {
-                    IdOuvinte = table.Column<int>(type: "INTEGER", nullable: false),
-                    IdAvaliacao = table.Column<int>(type: "INTEGER", nullable: false),
+                    IdAvaliacao = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     Classificacao = table.Column<int>(type: "INTEGER", nullable: false),
-                    Comentario = table.Column<string>(type: "TEXT", nullable: false),
+                    Comentario = table.Column<string>(type: "TEXT", nullable: true),
                     Estado = table.Column<int>(type: "INTEGER", nullable: false),
-                    GravacaoIdAlbum = table.Column<int>(type: "INTEGER", nullable: true)
+                    IdOuvinte = table.Column<int>(type: "INTEGER", nullable: false),
+                    GravacaoIdGravacao = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Avaliacoes", x => x.IdOuvinte);
+                    table.PrimaryKey("PK_Avaliacoes", x => x.IdAvaliacao);
                     table.ForeignKey(
-                        name: "FK_Avaliacoes_Gravacoes_GravacaoIdAlbum",
-                        column: x => x.GravacaoIdAlbum,
+                        name: "FK_Avaliacoes_Gravacoes_GravacaoIdGravacao",
+                        column: x => x.GravacaoIdGravacao,
                         principalTable: "Gravacoes",
-                        principalColumn: "IdAlbum");
+                        principalColumn: "IdGravacao");
                     table.ForeignKey(
                         name: "FK_Avaliacoes_Usuarios_IdOuvinte",
                         column: x => x.IdOuvinte,
@@ -191,31 +206,30 @@ namespace Musique.Migrations
                 name: "Denuncias",
                 columns: table => new
                 {
-                    IdOuvinte = table.Column<int>(type: "INTEGER", nullable: false)
+                    IdDenuncia = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    IdDenuncia = table.Column<int>(type: "INTEGER", nullable: false),
                     OpcMotivo = table.Column<string>(type: "TEXT", nullable: false),
-                    TextoMotivo = table.Column<string>(type: "TEXT", nullable: false),
+                    TextoMotivo = table.Column<string>(type: "TEXT", nullable: true),
                     Estado = table.Column<int>(type: "INTEGER", nullable: false),
                     IdAvaliacao = table.Column<int>(type: "INTEGER", nullable: false),
-                    DenuncianteIdUsuario = table.Column<int>(type: "INTEGER", nullable: false),
+                    IdOuvinte = table.Column<int>(type: "INTEGER", nullable: false),
+                    DenuncianteIdUsuario = table.Column<int>(type: "INTEGER", nullable: true),
                     ModeradorIdUsuario = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Denuncias", x => x.IdOuvinte);
+                    table.PrimaryKey("PK_Denuncias", x => x.IdDenuncia);
                     table.ForeignKey(
                         name: "FK_Denuncias_Avaliacoes_IdAvaliacao",
                         column: x => x.IdAvaliacao,
                         principalTable: "Avaliacoes",
-                        principalColumn: "IdOuvinte",
+                        principalColumn: "IdAvaliacao",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Denuncias_Usuarios_DenuncianteIdUsuario",
                         column: x => x.DenuncianteIdUsuario,
                         principalTable: "Usuarios",
-                        principalColumn: "IdUsuario",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "IdUsuario");
                     table.ForeignKey(
                         name: "FK_Denuncias_Usuarios_ModeradorIdUsuario",
                         column: x => x.ModeradorIdUsuario,
@@ -229,9 +243,14 @@ namespace Musique.Migrations
                 column: "ArtistasIdUsuario");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Avaliacoes_GravacaoIdAlbum",
+                name: "IX_Avaliacoes_GravacaoIdGravacao",
                 table: "Avaliacoes",
-                column: "GravacaoIdAlbum");
+                column: "GravacaoIdGravacao");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Avaliacoes_IdOuvinte",
+                table: "Avaliacoes",
+                column: "IdOuvinte");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Denuncias_DenuncianteIdUsuario",
@@ -247,6 +266,11 @@ namespace Musique.Migrations
                 name: "IX_Denuncias_ModeradorIdUsuario",
                 table: "Denuncias",
                 column: "ModeradorIdUsuario");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Gravacoes_IdAlbum",
+                table: "Gravacoes",
+                column: "IdAlbum");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Gravacoes_IdArtista",
@@ -279,6 +303,9 @@ namespace Musique.Migrations
 
             migrationBuilder.DropTable(
                 name: "Sugestoes");
+
+            migrationBuilder.DropTable(
+                name: "TblSeguidores");
 
             migrationBuilder.DropTable(
                 name: "Avaliacoes");

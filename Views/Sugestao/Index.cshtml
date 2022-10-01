@@ -1,0 +1,13 @@
+@model List<Sugestao>
+
+<a asp-action="Create">Criar</a>
+
+<table class="text-white">
+    <thead><tr><th scope="col">id</th><th scope="col">nome</th><th scope="col">letra</th><th scope="col">Estado</th><th scope="col">Avaliar</th></tr></thead>
+    <tbody>
+        @foreach (var sugestao in Model)
+        {
+            <tr><th scope="row">@sugestao.IdSugestao</th><td>@sugestao.NomeMusica</td><td>@sugestao.NomeArtista</td><td>@sugestao.Estado</td><td><a asp-action="Avaliar" asp-route-id="@sugestao.IdSugestao">Avaliar</a></td></tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,14 @@
+@model Sugestao
+
+<h1>Avaliar sugestao</h1>
+
+<p>Nome da música: @Model.NomeMusica</p>
+<p>Nome do artista: @Model.NomeArtista</p>
+<form method="POST" asp-action="ProcessReprovar">
+    <input type="hidden" asp-for="@Model.IdSugestao">
+    <button type="submit" class="btn btn-danger">Reprovar</button>
+</form>
+<form method="POST" asp-action="ProcessAprovar">
+    <input type="hidden" asp-for="@Model.IdSugestao">
+    <button type="submit" class="btn btn-danger">Aprovar</button>
+</form>
