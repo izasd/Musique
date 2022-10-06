@@ -35,6 +35,15 @@ nav {
     transition: 0.5s;
 }
 
+.josisney {
+    color: white !important;
+}
+
+.josisney:hover {
+    color: #56ECEE !important;
+    transition: 0.5s;
+}
+
 .logo-header {
     height: 30px !important;
 }
