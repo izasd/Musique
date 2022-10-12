@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed';
+}
+
+body{
+    background-image: linear-gradient(to right, black, #380256, #6c0078, #399fa0);
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card > h1{
+    font-weight: bold;
+    padding-bottom: 40px;
+    color: #ffffff;
+}
+
+img{
+    width: 10%;
+    margin-top: 3%;
+    margin-bottom: 1%;
+}
+ 
+table{
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.tabela{
+    width: 850px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+thead>tr{
+    background-color: #94009c;
+    color: #56ecee;
+    height: 50px;
+}
+
+tbody>tr{
+    height: 29px;
+}
+
+tbody>tr:nth-child(even){
+    background-color: #94009c;
+}
+
+tbody>tr:nth-child(odd){
+    background-color: #6c0078;
+}
