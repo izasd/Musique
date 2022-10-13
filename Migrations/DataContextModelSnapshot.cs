@@ -307,10 +307,10 @@ namespace Musique.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("OuvintesSeguidos")
+                    b.Property<int?>("OuvintesSeguidos")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Seguidores")
+                    b.Property<int?>("Seguidores")
                         .HasColumnType("INTEGER");
 
                     b.HasDiscriminator().HasValue("Ouvinte");

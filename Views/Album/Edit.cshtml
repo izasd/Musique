@@ -1,0 +1,20 @@
+@model Album;
+
+<div class="col-6 col-xl-4 offset-3 offset-xl-4 text-center">
+    <form method="POST">
+        <h1>Atualizar Dados</h1>
+        <hr class="mb-4">
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" placeholder="Nome do Ábum" asp-for="@Model.Nome">
+            <label asp-for="@Model.Nome">Nome do Álbum</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="date" class="form-control" placeholder="Data de Lancamento" asp-for="@Model.DataLancamento">
+            <label asp-for="@Model.DataLancamento">Data de Lançamento</label>
+        </div>
+
+        <button class="btn botao my-3" type="submit">Salvar</button>
+    </form>
+</div>

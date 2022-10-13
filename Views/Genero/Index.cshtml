@@ -1,0 +1,18 @@
+@model List<Genero>;
+<h1 class="text-center mb-3">Gêneros Musicais</h1>
+<div class="text-center"><a asp-action="Create" class="btn botao text-center mb-3">Adicionar Gênero</a></div>
+<div class="row">
+@foreach (var genero in Model)
+{
+    <div class="col-6 col-md-4 col-xl-3 g-0">
+        <a>
+            <div class="m-2 album rounded">
+                <img src='@($"/img/{@genero.IdGenero}.jpeg")' class="card-img-top rounded-top" alt="">
+                <div class="card-body mt-1 py-1 flex-grow text-center">
+                    @genero.Nome
+                </div>
+            </div>
+        </a>
+    </div>
+}
+</div>

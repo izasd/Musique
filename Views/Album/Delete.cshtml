@@ -1,12 +1,12 @@
-@model Musica
+@model Album
 
-<h2>Deletando Musica</h2>
+<h2>Deletando Album</i></h2>
 <h3>Tem Certeza que deseja deletar @Model.Nome?
 </h3>
 <hr>
 
 <form method="POST" asp-action="ProcessDelete">
-    <a asp-action="Index" asp-controller="Musica" class="btn btn-success">Não</a>
-    <input type="hidden" asp-for="@Model.IdMusica">
+    <a asp-action="Index" asp-controller="Album" class="btn btn-success">Não</a>
+    <input type="hidden" asp-for="@Model.IdAlbum">
     <button type="submit" class="btn btn-danger">Sim</button>
 </form>

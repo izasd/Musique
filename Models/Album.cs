@@ -17,7 +17,7 @@ public class Album
     // public int IdArtista { get; set; }
     // public Artista Artista { get; set; }
 
-    [Required]
+    // [Required]
     public ICollection<Gravacao> Gravacoes { get; set; }
 
     public ICollection<Artista> Artistas { get; set; }

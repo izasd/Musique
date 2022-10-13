@@ -1,0 +1,23 @@
+@model List<Artista>;
+    <h1 class="text-center mb-3">Artistas Cadastrados</h1>
+    <div class="text-center"><a asp-action="Create" class="btn botao text-center mb-3">Adicionar Artista</a></div>
+
+<table class="table table-dark table-striped">
+    <th scope="col">Nome</th>
+    <th scope="col">Email</th>
+    <th scope="col">Telefone</th>
+    <th scope="col">Editar</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var artista in Model)
+        {
+            <tr>
+            <th scope="row">@artista.Nome</th>
+            <td>@artista.Email</td>
+            <td>@artista.Telefone</td>
+            <td><a asp-action="Edit" asp-controller="Artista" asp-route-id="@artista.IdUsuario">Editar</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

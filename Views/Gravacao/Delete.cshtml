@@ -1,0 +1,12 @@
+@model Gravacao
+
+<h2>Deletando Gravação</i></h2>
+<h3>Tem Certeza que deseja deletar essa gravação?
+</h3>
+<hr>
+
+<form method="POST" asp-action="ProcessDelete">
+    <a asp-action="Index" asp-controller="Gravacao" class="btn btn-success">Não</a>
+    <input type="hidden" asp-for="@Model.IdGravacao">
+    <button type="submit" class="btn btn-danger">Sim</button>
+</form>

@@ -1,0 +1,47 @@
+@model Ouvinte;
+
+<div class="col-6 col-xl-4 offset-3 offset-xl-4 text-center">
+            <form method="POST">
+                <h1>Cadastre-se</h1>
+                <hr class="mb-4">
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" placeholder="Nome de Usuario" asp-for="@Model.Nome">
+                    <label asp-for="@Model.Nome">Nome de Usuário</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" placeholder="Nome de Usuario" asp-for="@Model.Telefone">
+                    <label asp-for="@Model.Telefone">Telefone</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="date" class="form-control" placeholder="Data de Nascimento" asp-for="@Model.DataNascimento">
+                    <label asp-for="@Model.DataNascimento">Data de Nascimento</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" placeholder="E-mail" asp-for="@Model.Email">
+                    <label asp-for="@Model.Email">E-mail</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" placeholder="Duração" asp-for="@Model.Senha">
+                    <label asp-for="@Model.Senha">Senha</label>
+                </div>
+
+                <div class="mb-3">
+                    <select class="form-select" asp-for="@Model.Genero">
+                        <option selected>Gênero</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+
+                <button class="btn botao my-3" type="submit">Cadastrar</button>
+                <hr class="mb-4">
+
+                <p>Já possui uma conta? <a asp-action="Index" asp-controller="Login" class="text-decoration-none">Faça Login</a></p>
+            </form>
+        </div>

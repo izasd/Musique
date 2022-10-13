@@ -1,0 +1,15 @@
+@model Genero;
+
+<div class="col-6 col-xl-4 offset-3 offset-xl-4 text-center">
+    <form method="POST">
+        <h1>Adicionar Gênero</h1>
+        <hr class="mb-4">
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" asp-for="@Model.Nome" placeholder="Nome de Usuario">
+            <label asp-for="@Model.Nome">Nome</label>
+        </div>
+
+        <button type="submit" class="btn botao my-3">Cadastrar</button>
+    </form>
+</div>

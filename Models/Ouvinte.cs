@@ -14,9 +14,9 @@ public class Ouvinte : Usuario
 
     public DateTime DataNascimento { get; set; }
 
-    public int OuvintesSeguidos { get; set; }
+    public int? OuvintesSeguidos { get; set; }
 
-    public int Seguidores { get; set; }
+    public int? Seguidores { get; set; }
 
     // [ForeignKey("Usuario")]
     // public int IdUsuario { get; set; }

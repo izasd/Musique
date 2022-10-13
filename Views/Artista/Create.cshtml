@@ -1,0 +1,35 @@
+@model Artista;
+
+<div class="col-6 col-xl-4 offset-3 offset-xl-4 text-center">
+            <form method="POST">
+                <h1>Cadastre-se</h1>
+                <hr class="mb-4">
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" placeholder="Nome de Usuario" asp-for="@Model.Nome">
+                    <label asp-for="@Model.Nome">Nome de Usuário</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" placeholder="Nome de Usuario" asp-for="@Model.Telefone">
+                    <label asp-for="@Model.Telefone">Telefone</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" placeholder="E-mail" asp-for="@Model.Email">
+                    <label asp-for="@Model.Email">E-mail</label>
+                </div>
+                
+                <div class="mb-3">
+                    <textarea placeholder="Biografia" class="form-control" asp-for="@Model.Biografia" rows="3"></textarea>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" placeholder="Duração" asp-for="@Model.Senha">
+                    <label asp-for="@Model.Senha">Senha</label>
+                </div>
+
+                <button class="btn botao my-3" type="submit">Cadastrar</button>
+
+            </form>
+        </div>

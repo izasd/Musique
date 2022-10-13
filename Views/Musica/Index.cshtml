@@ -1,13 +1,26 @@
 @model List<Musica>
 
-<a asp-action="Create">Criar</a>
 
-<table class="text-white">
-    <thead><tr><th scope="col">id</th><th scope="col">nome</th><th scope="col">letra</th><th scope="col">Editar</th><th scope="col">Excluir</th></tr></thead>
+    <h1 class="text-center mb-3">Músicas Cadastradas</h1>
+
+    <div class="text-center"><a asp-action="Create" class="btn botao text-center mb-3">Cadastrar Música</a></div>
+
+<table class="table table-dark table-striped">
+    <th scope="col">Nome</th>
+    <th scope="col">Letra</th>
+    <th scope="col">Editar</th>
+    <th scope="col">Ecluir</th>
+    </tr>
+    </thead>
     <tbody>
         @foreach (var musica in Model)
         {
-            <tr><th scope="row">@musica.IdMusica</th><td>@musica.Nome</td><td>@musica.Letra</td><td><a asp-action="Edit" asp-route-id="@musica.IdMusica">Editar</a></td><td><a asp-action="Delete" asp-route-id="@musica.IdMusica">Excluir</a></td></tr>
+            <tr>
+            <th scope="row">@musica.Nome</th>
+            <td>@musica.Letra</td>
+            <td><a asp-action="Edit" asp-route-id="@musica.IdMusica">Editar</a></td>
+            <td><a asp-action="Delete" asp-route-id="@musica.IdMusica">Excluir</a></td>
+            </tr>
         }
     </tbody>
 </table>

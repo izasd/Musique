@@ -1,26 +1,76 @@
-<div class="row text-white">
-    <div class="col-6 offset-3 text-center">
-        <h1>Teste -- Envie uma Denuncia</h1>
-        <p>Você está denunciando: UsuárioExemplo01</p>
-        <p>"Comentário ofensivo/preconceituoso"</p>
-        <form method="POST">
-            <div class="row">
-                <div class="col-8 col-xl-6 offset-3">
-                    <select class="form-select" id="motivo">
-                        <option selected>Selecione o motivo</option>
-                        <option value="Racismo">Racismo</option>
-                        <option value="Xenofobia">Xenofobia</option>
-                        <option value="Antissemitismo">Antissemitismo</option>
-                    </select>
+@{
+    Layout = "_LayoutHero";
+}
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero">
+        <div class="container position-relative">
+            <div class="row gy-5">
+                <div
+                    class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+                    <h2>Bem Vindo(a) ao <span>Musique!</span></h2>
+                    <p>O primeiro site de avaliação de músicas do Brasil! Aqui você encontrará uma variedade
+                        de gêneros musicais, artistas e músicas para avaliar do modo que preferir.
+                    </p>
+                    <div class="d-flex justify-content-center justify-content-lg-start">
+                        <a href="#about" class="btn-get-started">Get Started</a>
+                    </div>
                 </div>
+                <!--<div class="col-lg-6 order-1 order-lg-2">
+                    <img src="assets/img/hero-img.svg" class="img-fluid" alt="" data-aos="zoom-out"
+                        data-aos-delay="100">
+                </div>-->
             </div>
-            <p>Se quiser nos diga o motivo da denuncia você mesmo: </p>
-            <div class="form-floating col-6 offset-xl-3">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-                    style="height: 100px"></textarea>
-                <label for="floatingTextarea2">Comments</label>
+        </div>
+
+        </div>
+    </section>
+    <!-- End Hero Section -->
+    <hr>
+    <!-- ======= Our Services Section ======= -->
+    <section id="services" class="services sections-bg">
+        <div class="container">
+
+            <div class="section-header">
+                <h2>Funcionalidades</h2>
+                <p>Como o conteúdo musical, as possibilidades são infinitas no Musique!</p>
             </div>
-            <button type="submit" class="btn btn-primary botao my-3">Enviar Denúncia</button>
-        </form>
-    </div>
-</div>
+
+            <div class="row gy-4">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item  position-relative">
+                        <div class="icon">
+                            <i class="bi bi-broadcast"></i>
+                        </div>
+                        <h3>Avalie suas músicas favoritas</h3>
+                        <p>Escolha a sua música de preferência, pertencente a um artista e a um gênero,
+                            e deixe sua opinião sobre ela!</p>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item position-relative">
+                        <div class="icon">
+                            <i class="bi bi-chat-square-text"></i>
+                        </div>
+                        <h3>Interaja com outros usuários</h3>
+                        <p>As avaliações das músicas contêm um espaço para comentários, que aceita respostas de
+                            outros usários!</p>
+                    </div>
+                </div><!-- End Service Item -->
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item position-relative">
+                        <div class="icon">
+                            <i class="bi bi-easel"></i>
+                        </div>
+                        <h3>Divulgue seu trabalho em nosso site</h3>
+                        <p>A partir de um valor acessível, divulgue as suas músicas no Musique, com perfil e tudo!</p>
+                        <!--<a href="#" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a> -->
+                    </div>
+                </div><!-- End Service Item -->
+
+            </div>
+
+        </div>
+    </section><!-- End Our Services Section -->
