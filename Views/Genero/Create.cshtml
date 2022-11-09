@@ -4,12 +4,17 @@
     <form method="POST">
         <h1>Adicionar Gênero</h1>
         <hr class="mb-4">
-
-        <div class="form-floating mb-3">
+        <div class="row">
+            <div class="form-floating mb-3 col-11">
             <input type="text" class="form-control" asp-for="@Model.Nome" placeholder="Nome de Usuario">
-            <label asp-for="@Model.Nome">Nome</label>
+            <label asp-for="@Model.Nome" class="ms-3">Nome</label>
         </div>
+        <div class="col-1"><i class="bi bi-question-circle" id="nomegenero" onclick="detalhes(this)"></i></div>
+        </div>
+        
 
         <button type="submit" class="btn botao my-3">Cadastrar</button>
     </form>
 </div>
+
+<script src="~/js/detalhes.js" defer></script>

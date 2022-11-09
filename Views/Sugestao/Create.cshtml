@@ -1,21 +1,29 @@
 @model Sugestao
 
 <div class="col-6 col-xl-4 offset-3 offset-xl-4 text-center">
-            <form method="POST">
-                <h1>Enviar Sugestão</h1>
-                <hr class="mb-4">
+    <form method="POST">
+        <h1>Enviar Sugestão</h1>
+        <hr class="mb-4">
 
-                <div class="form-floating mb-3">
-                    <input type="name" class="form-control" placeholder="Nome da Música" asp-for="@Model.NomeMusica">
-                    <label asp-for="@Model.NomeMusica">Nome da Música</label>
-                </div>
+        <div class="row">
+            <div class="form-floating col-11 mb-3">
+                <input type="name" class="form-control" placeholder="Nome da Música" asp-for="@Model.NomeMusica">
+                <label asp-for="@Model.NomeMusica" class="ms-3">Nome da Música</label>
+            </div>
+            <div class="col-1"><i class="bi bi-question-circle" id="nomemusica" onclick="detalhes(this)"></i></div>
 
-                <div class="form-floating mb-3">
-                    <input type="name" class="form-control" placeholder="Artista Associado" asp-for="@Model.NomeArtista">
-                    <label asp-for="@Model.NomeArtista">Artista Associado</label>
-                </div>
-                <input type="hidden" asp-for="@Model.IdOuvinte">
-                <input type="hidden" asp-for="@Model.Estado">
-                <button type="submit" class="btn botao my-3">Enviar</button>
-            </form>
+            <div class="form-floating col-11 mb-3">
+                <input type="name" class="form-control" placeholder="Artista Associado" asp-for="@Model.NomeArtista">
+                <label asp-for="@Model.NomeArtista" class="ms-3">Artista Associado</label>
+            </div>
+            <div class="col-1"><i class="bi bi-question-circle" id="artista" onclick="detalhes(this)"></i></div>
         </div>
+
+
+        <input type="hidden" asp-for="@Model.IdOuvinte">
+        <input type="hidden" asp-for="@Model.Estado">
+        <button type="submit" class="btn botao my-3">Enviar</button>
+    </form>
+</div>
+
+<script src="~/js/detalhes.js" defer></script>

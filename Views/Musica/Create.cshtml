@@ -4,15 +4,23 @@
         <h1>Cadastro - Música</h1>
         <hr class="mb-4">
 
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" placeholder="Nome" asp-for="@Model.Nome">
-            <label asp-for="@Model.Nome">Nome</label>
+        <div class="row">
+            <div class="form-floating col-11 mb-3">
+                <input type="text" class="form-control" placeholder="Nome" asp-for="@Model.Nome">
+                <label asp-for="@Model.Nome" class="ms-3">Nome</label>
+            </div>
+            <div class="col-1"><i class="bi bi-question-circle" id="nomemusica" onclick="detalhes(this)"></i></div>
+
+            <div class="form-floating col-11 mb-3">
+                <input type="letra" class="form-control" asp-for="@Model.Letra" placeholder="Letra">
+                <label asp-for="@Model.Letra" class="ms-3">Letra</label>
+            </div>
+            <div class="col-1"><i class="bi bi-question-circle" id="letra" onclick="detalhes(this)"></i></div>
         </div>
 
-        <div class="form-floating mb-3">
-            <input type="letra" class="form-control" asp-for="@Model.Letra" placeholder="Letra">
-            <label asp-for="@Model.Letra">Letra</label>
-        </div>
+
         <button type="submit" class="btn botao my-3">Cadastrar</button>
     </form>
 </div>
+
+<script src="~/js/detalhes.js" defer></script>

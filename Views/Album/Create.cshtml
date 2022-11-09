@@ -4,18 +4,25 @@
     <form method="POST">
         <h1>Adicionar Álbum</h1>
         <hr class="mb-4">
+        <div class="row">
+            <div class="form-floating col-11 mb-3">
+                <input type="text" class="form-control" placeholder="Nome do Ábum" asp-for="@Model.Nome">
+                <label asp-for="@Model.Nome">Nome do Álbum</label>
+            </div>
+            <div class="col-1"><i class="bi bi-question-circle" id="nomealbum" onclick="detalhes(this)"></i></div>
 
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" placeholder="Nome do Ábum" asp-for="@Model.Nome">
-            <label asp-for="@Model.Nome">Nome do Álbum</label>
+            <div class="form-floating col-11 mb-3">
+                <input type="date" class="form-control" placeholder="Data de Lancamento"
+                    asp-for="@Model.DataLancamento">
+                <label asp-for="@Model.DataLancamento">Data de Lançamento</label>
+            </div>
+            <div class="col-1"><i class="bi bi-question-circle" id="datalancamento" onclick="detalhes(this)"></i></div>
         </div>
 
-        <div class="form-floating mb-3">
-            <input type="date" class="form-control" placeholder="Data de Lancamento" asp-for="@Model.DataLancamento">
-            <label asp-for="@Model.DataLancamento">Data de Lançamento</label>
-        </div>
 
         <button class="btn botao my-3" type="submit">Cadastrar</button>
-        
+
     </form>
 </div>
+
+<script src="~/js/detalhes.js" defer></script>

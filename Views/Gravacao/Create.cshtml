@@ -1,38 +1,57 @@
 @model Gravacao;
 <div class="col-6 col-xl-4 offset-3 offset-xl-4 text-center">
-            <form method="POST">
-                <h1>Cadastro - Música</h1>
-                <hr class="mb-4">
-                <div class="form-floating mb-3">
-                    <input type="date" class="form-control" asp-for="@Model.DataLancamento" placeholder="Nome">
-                    <label asp-for="@Model.DataLancamento">Data de Lançamento</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="number" class="form-control" asp-for="@Model.Duracao" placeholder="Nome">
-                    <label asp-for="@Model.DataLancamento">Duração</label>
-                </div>
+    <form method="POST">
+        <h1>Cadastro - Música</h1>
+        <hr class="mb-4">
+        <div class="row">
+            <div class="form-floating col-11 mb-3 col-11">
+                <input type="date" class="form-control" asp-for="@Model.DataLancamento" placeholder="Nome">
+                <label asp-for="@Model.DataLancamento" class="ms-3">Data de Lançamento</label>
+            </div>
+            <div class="col-1"><i class="bi bi-question-circle" id="datalancamento" onclick="detalhes(this)"></i></div>
 
-                <div class="form-floating mb-3">
-                    <select class="form-select" asp-for="@Model.IdArtista" asp-items="@ViewBag.SelectArtistas">
-                        <option value="" selected>Artista</option>
-                    </select>
-                </div>
+            <div class="form-floating col-11 mb-3">
+                <input type="number" class="form-control" asp-for="@Model.Duracao" placeholder="Nome">
+                <label asp-for="@Model.DataLancamento" class="ms-3">Duração</label>
+            </div>
+            <div class="col-1"><i class="bi bi-question-circle" id="duracao" onclick="detalhes(this)"></i></div>
+            
 
-                <div class="mb-3">
-                    <select class="form-select" asp-for="@Model.IdGenero" asp-items="@ViewBag.SelectGeneros">
-                        <option value="" selected>Gênero</option>
-                    </select>
-                </div>
+            <div class="form-floating col-11 mb-3">
+                <select class="form-select" asp-for="@Model.IdArtista" asp-items="@ViewBag.SelectArtistas">
+                    <option value="" selected>Artista</option>
+                </select>
+            </div>
+            <div class="col-1"><i class="bi bi-question-circle" id="artista" onclick="detalhes(this)"></i></div>
+            
 
-                <div class="mb-3">
-                    <select class="form-select" asp-for="@Model.IdMusica" asp-items="@ViewBag.SelectMusicas">
-                        <option value="" selected>Musica</option>
-                    </select>
-                </div>
+            <div class="mb-3 col-11">
+                <select class="form-select" asp-for="@Model.IdGenero" asp-items="@ViewBag.SelectGeneros">
+                    <option value="" selected>Gênero</option>
+                </select>
+            </div>
+            <div class="col-1"><i class="bi bi-question-circle" id="genero" onclick="detalhes(this)"></i></div>
+            
 
+            <div class="mb-3 col-11">
+                <select class="form-select" asp-for="@Model.IdMusica" asp-items="@ViewBag.SelectMusicas">
+                    <option value="" selected>Musica</option>
+                </select>
+            </div>
+            <div class="col-1"><i class="bi bi-question-circle" id="musica" onclick="detalhes(this)"></i></div>
+            
+
+            <div class="mb-3 col-11">
                 <select class="form-select" asp-for="@Model.IdAlbum" asp-items="@ViewBag.SelectAlbuns">
-                        <option value="" selected>Album</option>
-                    </select>
-                <button class="btn botao my-3" type="submit">Cadastrar</button>
-            </form>
+                    <option value="" selected>Album</option>
+                </select>
+            </div>
+            <div class="col-1"><i class="bi bi-question-circle" id="album" onclick="detalhes(this)"></i></div>
+            
         </div>
+
+        <button class="btn botao my-3" type="submit">Cadastrar</button>
+    </form>
+</div>
+
+<script src="~/js/detalhes.js" defer></script>
